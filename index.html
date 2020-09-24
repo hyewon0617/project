@@ -1,0 +1,431 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JungHyeWon</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/css?family=Montserrat">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+		body {
+			font: 400 15px/1.8 Lato, sans-serif;
+			color: #777;
+		}
+		h3, h4 {
+			margin: 10px, 0, 30px, 0;
+			letter-spacing: 10px;
+			font-size: 20px;
+			color: #111
+		}
+		.container {
+			padding: 80px 120px;
+
+		}
+		.person {
+			border: 10px solid transparent;
+			margin-bottom: 25px;
+			width: 80%
+			height: 80%;
+			opacity: 0.7;
+		}
+		.carousel-inner img {
+			-webkit-filter: grayscale(90%);
+			filter: grayscale(90%); /*흑백사진으로 만든다*/
+			width: 100%;
+			margin: auto;
+		}
+		.bg-1 {
+			background:  #2d2d30;
+			color: #bdbdbd;
+		}
+		.bg-1 h3 {
+			color: #fff;
+		}
+		.bg-1 p {
+			font-style: italic;
+		}
+		.list-group-item:first-child {
+			border-top-right-radius: 0;
+			border-top-left-radius: 0;
+		}
+		.thumnail {
+			padding: 0 0 15px 0;
+			border: none;
+			border-radius: 0;
+		}
+		.thumnail p {
+			margin-top: 15px;
+			color: #555}
+		.btn {padding: 10px 20px;
+			background-color: #333;
+			color: #f1f1f1;
+			border-radius: 0;
+			transition: .2s;}
+		.btn:hover, .btn:focus {
+			border: 1px solid #333;
+			background-color: #fff;
+			color: #000;
+		}
+		.modal-header, .modal-body {
+			padding: 40px, 50px;
+		}
+		.nav-tabs li a {
+			color: #777;
+		}
+		#googleMap {
+			width: 100%;
+			height: 400px;
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+		}
+		.navbar {
+			font-family: Monterrat, sans-serif;
+			margin-bottom: 0;
+			background-color: #2d2d30;
+			border: 0;
+			font-size: 11px !important;
+			letter-spacing: 4px;
+			opacity: 0.9;
+		}
+		.navbar li a, .navbar .navbar-brand {
+			color: #d5d5d5 !important;
+		}
+		.navbar-nav li a:hover {
+			color: #fff !important;
+		}
+		.navbar-nav li.active a {
+			color: #fff !important;
+			background-color: #29292c !important;
+		}
+		.navbar-default .navbar-toggle {
+			background-color: transparent;
+		}
+		.open .dropdown-toggle {
+			color: #fff;
+			background-color: #555 !important
+		}
+		.dropdown-menu li a {
+			color: #000 !important
+		}
+		.dropdown-menu li a:hover {
+			background-color: red !important
+		}
+		.footer {
+			background-color: #2d2d30;
+			color: #f5f5f5;
+			padding: 32px;
+		}
+		.footer a {
+			color: #f5f5f5;
+		}
+		.footer a:hover {
+			color: #777;
+			text-decoration: none;
+		}
+		.form-control {
+			border-radius: 0;
+		}
+		textarea {
+			resize: none;
+		}
+	</style>
+</head>
+ <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+	<!-- 1. navigation bar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+
+				<div class="navbar-header">
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-targer="myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#myPage" class="navbar-brand"></a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#myPage">HOME</a></li>
+						<li><a href="#band">BAND</a></li>
+						<li><a href="#tour">TOUR</a></li>
+						<li><a href="#contact">CONTACT</a></li>
+						<li class="dropdown">
+							<a href="#" class="doropdown-toggle" data-toggle="dropdown">MORE
+								<span class="caret"></span>
+									<ul class="dropdown-menu">
+										<li><a href="#">Merchandise</a></li>
+										<li><a href="#">Extras</a></li>
+										<li><a href="#">Media</a></li>
+									</ul>
+								
+							</a></li>
+						<li><a href=""><span class="glyphicon glyphicon-search"></span>
+						</a></li>
+					</ul>
+
+				</div>
+
+			</div>
+		</nav>
+	<!-- 2. 회전목마 -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+		<!-- slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="./image/ny.jpg" alt="New York" width="1200" height="700">
+				<div class="carousel-caption">
+					<h4>New York</h4>
+					<p>The stomsphere in New York is Lorem ipsum</p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="./image/chicago.jpg" alt="Chicago" width="1200" height="700">	<div class="carousel-caption">
+					<h4>Chicago</h4>
+					<p>The stomsphere in Chicago is Lorem ipsum</p>
+				</div>				
+			</div>
+			<div class="item">
+				<img src="./image/la.jpg" alt="Los Angeles" width="1200" height="700">	<div class="carousel-caption">
+					<h4>Los Angeles</h4>
+					<p>The stomsphere in Los Angeles is Lorem ipsum</p>
+				</div>			
+			</div>
+		</div>
+		<!-- left or right control -->
+		<a href="#myCarousel" role="button" data-slide="prev" class="left carousel-control">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a href="#myCarousel" role="button" data-slide="next" class="right carousel-control">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+	</div>
+	<!-- 3. band section -->
+	<div id="band" class="container text-center">
+		<h3>BAND</h3>
+		<p>We love musie!!</p>
+		<p>where does it come form?</p>
+		<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+		<div class="row">
+			<div class="col-sm-4">
+				<p class="text-center"><strong>Honggildong</strong></p><br>
+				<a href="#demo" data-toggle="collapse">
+				<img src="./image/bandmember.jpg" alt="Random Name" class="img-circle person" width="255" height="255">					
+				</a>
+				<div id="demo" class="collapse">
+					<p>Guitarlist and Laed Vocalist</p>
+					<p>Loves long walks on the beach</p>
+					<p>member since 1998</p>
+				</div>
+
+			</div>
+			<div class="col-sm-4">
+				<p class="text-center"><strong>younghyun</strong></p><br>
+				<a href="#demo1" data-toggle="collapse">
+				<img src="./image/bandmember.jpg" alt="Random Name" class="img-circle person" width="255" height="255">					
+				</a>
+				<div id="demo1" class="collapse">
+					<p>Guitarlist and Laed Vocalist</p>
+					<p>Loves long walks on the beach</p>
+					<p>member since 1998</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<p class="text-center"><strong>Hyewon</strong></p><br>
+				<a href="#demo2" data-toggle="collapse">
+				<img src="./image/bandmember.jpg" alt="Random Name" class="img-circle person" width="255" height="255">					
+				</a>
+				<div id="demo2" class="collapse">
+					<p>Guitarlist and Laed Vocalist</p>
+					<p>Loves long walks on the beach</p>
+					<p>member since 1998</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 4. Tour -->
+	<div id="tour" class="bg-1">
+		<div class="container">
+			<h3 class="text-center">TOUT DATES</h3>
+			<p class="text-center">Lorem ipsum we'll play you some music.<br>
+			Rmember to book your tickets!!
+			</p>
+			<ul class="list-group">
+				<li class="list-group-item">September <span class="label label-danger">Sold Out!</span></li>
+				<li class="list-group-item">October <span class="label label-danger">Sold Out!</span></li>
+				<li class="list-group-item">November<span class="badge">3</span></li>
+			</ul>
+			<div class="row text-center">
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="./image/paris.jpg" alt="Paris" width="400" height="300">
+						<p><strong>Paris</strong></p>
+						<p>Friday 27 November 2020</p>
+						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="./image/newyork.jpg" alt="New York" width="400" height="300">
+						<p><strong>New York</strong></p>
+						<p>Friday 27 November 2020</p>
+						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="./image/sanfran.jpg" alt="San Francisco" width="400" height="300">
+						<p><strong>San Francisco</strong></p>
+						<p>Friday 27 November 2020</p>
+						<button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+					</div>
+				</div>				
+			</div>
+		</div></div>
+	<!-- 5. Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<!-- modal content 정의 -->
+			<div class="modal-content">
+				<!-- 1. modal header -->
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">x</button>
+					<h4><span class="glyphicon glyphicon-lock"> Tickets</span></h4>
+				</div>
+				<!-- 2. modal body -->
+				<div class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							<label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
+							<input type="number" class="form-control" id="psw" placeholder="How many?">
+						</div>
+
+
+						<div class="form-group">
+							<label for="username"><span class="glyphicon glyphicon-user"></span>Send To</label>
+							<input type="number" class="form-control" id="username" placeholder="Enter email!">
+						</div>
+						<button class="btn btn-block" type="button">Pay<span class="glyphicon glyphicon-ok"></span></button>
+					</form>
+				</div>
+				<!-- 3. modal footer -->
+				<div class="modal-footer">
+					<button class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+						<span class="glyphicon glyphicon-remove"></span>Cancel
+					</button>
+					<p>Need <a href="#">Help?</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 6. contact section -->
+	<div id="contact" class="container">
+		<h3 class="text-center">Contact</h3>
+		<p class="text-center"><em>We love our fan!!</em></p>
+		<div class="row">
+			<div class="col-sm-4">
+				<p>Fan? Drop a note.</p>
+				<p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
+				<p><span class="glyphicon glyphicon-phone"></span>Phone: 02-9999-9999</p>
+				<p><span class="glyphicon glyphicon-email"></span>eMail: master@gamil.com</p>
+			</div>
+			<div class="col-sm-8">
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<input type="text" class="form-control" id="name" name="name" placeholder="Enter name..." required="">
+					</div>
+					<div class="col-sm-6 form-group">
+						<input type="email" class="form-control" id="email" name="email" placeholder="Enter email..." required="">
+					</div>
+					<textarea id="comments" class="form-control" name="comments" row="5"></textarea>
+					<br>
+					<div class="row">
+						<div class="col-md-12 form-group">
+							<button type="submit" class="btn pull-right">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<br>
+	<h3 class="text-center">From The Blog</h3>
+	<ul class="nav nav-tabs">
+		<li class="active">
+			<a href="#mike" data-toggle="tab">Mike</a>
+		</li>
+		<li><a href="#menu1" data-toggle="tab">Chandler</a></li>
+		<li><a href="#menu2" data-toggle="tab">Peter</a></li>
+	</ul>
+	<div class="tab-content">
+		<div id="home" class="tab-pane fade in active">
+			<h2>Mike Ross, Manager</h2>
+			<p>Lorem ipsum</p>
+		</div>
+		<div id="menu1" class="tab-pane fade">
+			<h2>Chandler Bing, Guitarlist</h2>
+			<p>Lorem ipsum</p>
+		</div>
+		<div id="menu2" class="tab-pane fade">
+			<h2>Peter Griffin, Bss Guitarlist</h2>
+			<p>Lorem ipsum</p>
+		</div>
+	</div>
+	</div>
+	<!-- 7. google map: https://cloud.google.com/maps-platform/ -->
+	<div id="googleMap"></div>
+	<script>
+		function myMap() {
+			var myCenter = new google.maps.LatLng(37.556182, 126.9377347);
+			var mapProp = {center:myCenter, zoom:12, scroolwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+			var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+			var marker = new google.maps.Marker({position:myCenter});
+			marker.setMap(map);
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyggF9NZ3g7yehZYVMqHaJ5YrYj-d13KE&callback=myMap"></script>
+	<!-- 8. footer -->
+	<footer class="text-center">
+		<a href="#myPage" class="up-arrow" data-toggle="tooltip" title="To Top">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</a><br><br>
+		<p>Bootstrap Website
+			<a href="http://www.google.com" data-toggle="tooltip" title="Welcome...">
+				http://www.google.com
+			</a></p>
+	</footer>
+
+	<script>
+		$(function() {
+			// Tooltip초기화
+			$('[data-toggle="tooltip"]').tooltip();
+
+			// navbar와 footer를 부드럽게 scrolling하기
+			$(".navbar a, footer a[href='#myPage']").on('click', function() {
+				if(this.hash !== "") {
+					event.preventDefault(); //이벤트 발생을 제거
+					var hash = this.hash;
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 900, function() {
+						window.location.hash = hash;
+					})
+				}
+			})
+			
+		})
+	</script>
+	
+ </body>
+</html>
